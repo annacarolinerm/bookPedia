@@ -1,0 +1,37 @@
+<section class="container">
+  <img src="assets/imagens/logoBookPedia.png" alt="">
+  <header>Qual livro você procura?</header>
+  <div class="busca">
+    <input type="search" [formControl]="campoBusca" placeholder="Busque por assunto, autoria, nome...">
+    <button>
+      <img src="assets/imagens/procurar.png" alt="Lupa de cor preta">
+    </button>
+  </div>
+  <!-- <p>Busque por assunto, autoria, nome...</p> -->
+  <div class="resultado mensagem-erro" *ngIf="mensagemErro">
+    {{ mensagemErro }}
+  </div>
+  <div class="resultados" *ngIf="livrosEncontrados$ | async">
+    {{ totalDeResultados }} resultados encontrados.
+  </div>
+
+  <div class="container-card" *ngIf="listaLivros.length > 0">
+    <div *ngFor="let livro of listaLivros">
+      <app-livro [livro]="livro"></app-livro>
+    </div>
+  </div>
+
+  <p-paginator
+    [rows]="resultadosPorPagina"
+    [totalRecords]="totalDeResultados"
+    [pageLinkSize]="3"
+    (onPageChange)="mudarPagina($event)"
+    *ngIf="totalDeResultados > resultadosPorPagina">
+  </p-paginator>
+
+  <ng-template #telaInicial>
+    <div class="imagens">
+      <h1 class="titulo">Busque o livro que quiser <br> de forma simples e rápida. <br></h1>
+    </div>
+  </ng-template>
+</section>
