@@ -1,27 +1,66 @@
 # BookPedia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+BookPedia é uma aplicação web desenvolvida em Angular que permite a busca de livros utilizando a API pública do Google Books. O sistema oferece uma interface simples e responsiva para que usuários possam pesquisar livros por título, autor ou assunto, visualizar resultados paginados e acessar informações detalhadas das obras.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Busca de livros por texto livre (título, autor, gênero).  
+- Paginação dos resultados para facilitar a navegação.  
+- Exibição dos principais dados dos livros, como título e autores.  
+- Tratamento de erros básicos para informar o usuário.  
+- Interface responsiva e amigável.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 14  
+- TypeScript  
+- RxJS para programação reativa  
+- Google Books API  
+- PrimeNG para componentes UI (paginador)  
+- HTML e CSS para layout e estilo
 
-## Build
+## Como Rodar o Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Pré-requisitos
 
-## Running unit tests
+- Node.js (v14 ou superior)  
+- Angular CLI
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Passos
 
-## Running end-to-end tests
+1. Clone o repositório:  
+```bash
+git clone [URL_DO_REPOSITÓRIO]
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Acesse a pasta do projeto:  
+```bash
+cd BookPedia
+```
 
-## Further help
+3. Instale as dependências:  
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Execute a aplicação:  
+```bash
+ng serve
+```
+
+5. Abra o navegador e acesse:  
+```
+http://localhost:4200
+```
+
+## Estrutura do Projeto
+
+- `src/app/components` — componentes Angular que compõem a interface, incluindo a lista de livros.  
+- `src/app/services` — serviços Angular responsáveis por acessar a API do Google Books e fornecer dados ao frontend.  
+- `src/app/models` — modelos TypeScript para tipagem dos dados do livro.  
+- `src/assets` — arquivos estáticos como imagens e estilos.
+
+## Observações
+
+- O projeto pode ser expandido futuramente com funcionalidades como busca por IA, login, histórico, entre outras.  
+- Atualmente, o foco está na busca simples e exibição dos livros via API Google Books.
