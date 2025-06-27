@@ -64,3 +64,7 @@ http://localhost:4200
 
 - O projeto pode ser expandido futuramente com funcionalidades como busca por IA, login, histórico, entre outras.  
 - Atualmente, o foco está na busca simples e exibição dos livros via API Google Books.
+
+## Link Documentação
+
+https://docs.google.com/document/d/1iLwWgIi3V-NJemCN0kmO6l7KxLZCkvzmgRqyGt2AppM/edit?usp=sharing
