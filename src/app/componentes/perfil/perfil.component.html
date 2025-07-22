@@ -1,0 +1,46 @@
+<main class="profile-container">
+  <div class="profile-sidebar">
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <img src="assets/imagens/icone-busca.png" alt="Avatar do usuário">
+      </div>
+      <h3>JULIA GOMES</h3>
+      <p>julia&#64;gmail.com</p>
+    </div>
+  </div>
+
+  <div class="profile-content">
+    <div class="tabs">
+      <button class="tab" [class.active]="activeTab === 'favorites'" (click)="setActiveTab('favorites')">MEUS FAVORITOS</button>
+      <button class="tab" [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">HISTÓRICO DE PESQUISA</button>
+    </div>
+
+    <div class="content-area">
+      <div class="tab-content" *ngIf="activeTab === 'favorites'" id="favorites-content">
+        <div class="books-grid">
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="assets/images/capaIndisponivel.png" alt="Capa do livro">
+              <span class="author">LUTHER ALT</span>
+            </div>
+            <div class="book-info">
+              <h4>Título do livro</h4>
+              <p><strong>Autor(a):</strong> Nome do autor</p>
+              <p><strong>Data de publicação:</strong> 12/10/2010</p>
+              <p><strong>Editora:</strong> Nome</p>
+              <button class="synopsis-btn">Ler sinopse</button>
+            </div>
+            <button class="favorite-btn">★</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" *ngIf="activeTab === 'history'" id="history-content">
+        <h4>HISTÓRICO</h4>
+        <p>Nenhum item encontrado no histórico.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+

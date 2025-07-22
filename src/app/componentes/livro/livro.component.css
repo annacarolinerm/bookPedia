@@ -15,7 +15,7 @@ img {
 
 .card {
   display: flex;
-  width: 384px;
+  width: 400px;
   height: 310px;
   filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.2));
   margin: 24px;
@@ -40,9 +40,10 @@ img {
   font-family: "Cormorant Garamond", serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 27px;
+  font-size: 23px;
   line-height: 30px;
   color: #93ac9e;
+  margin-top: 5px;
 }
 
 .informacoes {
@@ -82,8 +83,28 @@ button:hover {
   background: #39443e;
 }
 
+.card {
+  display: flex;
+  width: 384px;
+  height: 310px;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.2));
+  margin: 24px;
+  border-radius: 8px 0px 0px 8px;
+  position: relative; /* Necessário para o posicionamento absoluto da estrela */
+}
 
-
+.icone-favoritar {
+  position: absolute;
+  top: 5px;  /* Distância do topo da card */
+  right: 0px; /* Distância da borda direita da card */
+  left: 270px;
+  padding: 0;
+  width: 20px;  /* Aumentar o tamanho da estrela */
+  height: 40px;  /* Aumentar o tamanho da estrela */
+  z-index: 10;  /* Garantir que a estrela fique visível sobre outros elementos */
+  object-fit: contain;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
 
 
 

@@ -2,6 +2,7 @@
   <img
     src="{{ livro.thumbnail != undefined ? livro.thumbnail : 'assets/imagens/capaIndisponivel.png'}}"
     alt="Capa do livro">
+
   <div class="info-card">
     <p class="titulo">{{ livro.title | slice:0:30 }}</p>
     <p class="informacoes">Autoria:</p>
@@ -12,8 +13,10 @@
     <p class="resultado">{{ livro.publisher | slice:0:20  }}</p>
     <button (click)="onModalChange(true)">Ler sinopse</button>
   </div>
-</div>
-<div *ngIf="modalAberto">
-  <app-modal-livro [livro]="livro" (mudouModal)="onModalChange($event)"></app-modal-livro>
-</div>
 
+  <!-- Ícone de estrela flutuante -->
+  <img 
+    src="assets/imagens/favoritar.png" 
+    alt="Favorito"
+    class="icone-favoritar">
+</div>

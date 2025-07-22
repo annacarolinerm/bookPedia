@@ -39,6 +39,7 @@ export interface ImageLinks {
 
 //representa cada um dos itens do array retornado
 export interface Item {
+    id: string;
     volumeInfo:  VolumeInfo
 }
 

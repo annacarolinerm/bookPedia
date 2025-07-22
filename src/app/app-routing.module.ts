@@ -1,6 +1,11 @@
 import { ListaLivrosComponent } from './views/lista-livros/lista-livros.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastroComponent } from './componentes/cadastro/cadastro.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { RecuperacaoSenhaComponent } from './componentes/recuperacao-senha/recuperacao-senha.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+
 
 const routes: Routes = [
   {
@@ -11,7 +16,15 @@ const routes: Routes = [
   {
     path: 'lista-livros',
     component: ListaLivrosComponent
-  }
+  },
+
+  { path: 'cadastro', component: CadastroComponent }, 
+
+  { path: 'login', component: LoginComponent },
+
+  { path: 'recuperacao-senha', component: RecuperacaoSenhaComponent },
+
+  { path: 'perfil', component: PerfilComponent },
 ];
 
 @NgModule({
@@ -19,3 +32,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+

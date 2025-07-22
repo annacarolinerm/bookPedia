@@ -1,0 +1,168 @@
+/* Container principal */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card principal */
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.card-left {
+  background: #8FA99C;
+  color: white;
+  padding: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-left h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.card-left img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.card-right {
+  padding: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-right h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+input {
+  padding: 1rem;
+  border: none;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background-color: #ddd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background: #8FA99C;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: #7a9489;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(143, 169, 156, 0.3);
+}
+
+.forgot-password {
+  color: #666;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #8FA99C;
+}
+
+.card-right p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card-right p a {
+  color: #333;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.card-right p a:hover {
+  color: #8FA99C;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .card-left, .card-right {
+    padding: 2rem;
+  }
+
+  .card-left h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-right h3 {
+    font-size: 1.4rem;
+  }
+}

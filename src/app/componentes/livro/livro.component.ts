@@ -15,3 +15,5 @@ export class LivroComponent {
     this.modalAberto = evento;
   }
 }
+
+

@@ -1,0 +1,26 @@
+<main class="container">
+  <div class="card">
+    <div class="card-left">
+      <h2>BEM-VINDO!</h2>
+      <img src="assets/imagens/tela.png" alt="Ilustração de pessoas lendo" />
+    </div>
+    <div class="card-right">
+      <h3>LOGIN</h3>
+
+      <form (ngSubmit)="onSubmit()">
+        <label for="email">EMAIL:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required />
+
+        <label for="password">SENHA:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required />
+
+        <a routerLink="/recuperacao-senha" class="forgot-password">Esqueceu a senha?</a>
+
+        <button type="submit" class="btn">ENTRAR</button>
+      </form>
+      <p>NÃO TEM UMA CONTA? <a routerLink="/cadastro">CADASTRE-SE</a></p>
+    </div>
+  </div>
+</main>
+
+

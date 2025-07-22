@@ -2,12 +2,13 @@
   <img src="assets/imagens/logoBookPedia.png" alt="">
   <header>Qual livro você procura?</header>
   <div class="busca">
-    <input type="search" [formControl]="campoBusca" placeholder="Busque por assunto, autoria, nome...">
+    <input type="search" [formControl]="campoBusca">
+    <p></p>
     <button>
       <img src="assets/imagens/procurar.png" alt="Lupa de cor preta">
     </button>
   </div>
-  <!-- <p>Busque por assunto, autoria, nome...</p> -->
+  <p>Busque por assunto, autoria, nome...</p>
   <div class="resultado mensagem-erro" *ngIf="mensagemErro">
     {{ mensagemErro }}
   </div>

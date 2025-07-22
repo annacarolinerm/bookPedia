@@ -14,6 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './pipes/autoria.pipe';
 import { PaginatorModule } from 'primeng/paginator';
+import { CadastroComponent } from './componentes/cadastro/cadastro.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { RecuperacaoSenhaComponent } from './componentes/recuperacao-senha/recuperacao-senha.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { PaginatorModule } from 'primeng/paginator';
     ListaLivrosComponent,
     ModalLivroComponent,
     AutoriaPipe,
-    TruncateDescriptionPipe
+    TruncateDescriptionPipe,
+    CadastroComponent,
+    LoginComponent,
+    RecuperacaoSenhaComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,3 +50,5 @@ import { PaginatorModule } from 'primeng/paginator';
   exports: [TruncateDescriptionPipe]
 })
 export class AppModule { }
+
+
