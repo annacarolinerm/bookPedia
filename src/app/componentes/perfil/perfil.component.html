@@ -37,7 +37,9 @@
       
       <div class="tab-content" *ngIf="activeTab === 'history'" id="history-content">
         <h4>HISTÓRICO</h4>
-        <p>Nenhum item encontrado no histórico.</p>
+        <p *ngIf="historico.length === 0">Nenhum item encontrado no histórico.</p>
+
+        <p *ngFor="let registro of historico">{{ registro.consulta }} - {{ registro.dataHora | date }}</p>
       </div>
     </div>
   </div>

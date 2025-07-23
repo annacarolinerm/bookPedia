@@ -4,6 +4,7 @@ import { forkJoin, map, Observable, switchMap } from 'rxjs';
 import { Item, Livro } from 'src/app/models/interfaces';
 import { LivroVolumeInfo } from 'src/app/models/livroVolumeInfo';
 import { FavoritoService } from 'src/app/service/favorito.service';
+import { HistoricoBuscaService } from 'src/app/service/historico-busca.service';
 import { LivroService } from 'src/app/service/livro.service';
 
 @Component({
@@ -18,11 +19,13 @@ export class PerfilComponent implements OnInit {
   email: string = '';
 
   favoritos: LivroVolumeInfo[] = [];
-
+  historico: any[] = []
+ 
   constructor(
     private http: HttpClient,
     private favoritoService: FavoritoService,
-    private service: LivroService
+    private service: LivroService,
+    private historicoService: HistoricoBuscaService
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +37,13 @@ export class PerfilComponent implements OnInit {
     });
 
     this.listarMeufavoritos();
+    this.listarHistorico();
+  }
+
+  listarHistorico() {
+    this.historicoService.listar().subscribe({
+      next: (response) => this.historico = response
+    });
   }
 
   buscarInfoUsuario(): Observable<any> {
