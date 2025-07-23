@@ -90,18 +90,18 @@ button:hover {
   filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.2));
   margin: 24px;
   border-radius: 8px 0px 0px 8px;
-  position: relative; /* Necessário para o posicionamento absoluto da estrela */
+  position: relative; 
 }
 
 .icone-favoritar {
   position: absolute;
-  top: 5px;  /* Distância do topo da card */
-  right: 0px; /* Distância da borda direita da card */
+  top: 5px; 
+  right: 0px; 
   left: 270px;
   padding: 0;
-  width: 20px;  /* Aumentar o tamanho da estrela */
-  height: 40px;  /* Aumentar o tamanho da estrela */
-  z-index: 10;  /* Garantir que a estrela fique visível sobre outros elementos */
+  width: 20px;  
+  height: 40px;  
+  z-index: 10;  
   object-fit: contain;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
 }

@@ -9,7 +9,7 @@ import { Livro } from 'src/app/models/interfaces';
 export class LivroComponent {
 
   @Input() livro: Livro;
-  modalAberto: boolean = false; // Inicializa o modal como fechado
+  modalAberto: boolean = false;
 
   onModalChange(evento: boolean) {
     this.modalAberto = evento;

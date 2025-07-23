@@ -19,27 +19,27 @@ span {
 } */
 
 * {
-  box-sizing: border-box; /* Garante que padding e borda sejam inclusos na largura */
+  box-sizing: border-box; 
 }
 
 .image-container {
   width: 100%;
-  display: flex; /* Organiza os itens em linha */
-  gap: 0; /* Remove espaço entre os itens */
+  display: flex; 
+  gap: 0; 
 
 }
 
 .image-container img {
   width: 100%;
-  display: block; /* Remove o espaço causado por "inline-block" */
-  margin: 0; /* Remove margens extras */
-  border: none; /* Remove bordas, se existirem */
-  padding: 0; /* Remove espaçamentos */
+  display: block; 
+  margin: 0;
+  border: none; 
+  padding: 0; 
   margin-top: 5%;
 }
 
 @media (max-width: 768px) {
   .image-container img {
-    max-width: 100%; /* As imagens ocupam toda a largura da tela */
+    max-width: 100%; 
   }
 }

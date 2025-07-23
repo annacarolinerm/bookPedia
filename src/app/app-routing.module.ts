@@ -8,7 +8,6 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { AuthorizadedComponent } from './componentes/authorizaded/authorizaded.component';
 import { AuthGuard } from './service/auth.guard';
 
-
 const routes: Routes = [
   {
     path: "",
@@ -30,6 +29,10 @@ const routes: Routes = [
   { path: 'recuperacao-senha', component: RecuperacaoSenhaComponent },
 
   { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
+
+   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+
+   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

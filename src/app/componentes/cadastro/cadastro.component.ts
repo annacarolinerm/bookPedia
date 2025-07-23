@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Importe o Router
+import { Router } from '@angular/router'; 
 import { Observable } from 'rxjs';
 
 @Component({
@@ -19,7 +19,6 @@ export class CadastroComponent {
     private http: HttpClient
   ) { }
 
-  // Método chamado quando o formulário de cadastro é enviado
   onSubmit(): void {
     if (this.email !== this.confirmEmail) {
       alert('Os e-mails não coincidem!');
@@ -33,7 +32,6 @@ export class CadastroComponent {
       error: () => console.log('teste')
     });
 
-    // Após o cadastro, redireciona para a página de login
     
   }
 
