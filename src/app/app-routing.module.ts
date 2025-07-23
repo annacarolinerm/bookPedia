@@ -5,6 +5,7 @@ import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RecuperacaoSenhaComponent } from './componentes/recuperacao-senha/recuperacao-senha.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { AuthorizadedComponent } from './componentes/authorizaded/authorizaded.component';
 
 
 const routes: Routes = [
@@ -18,9 +19,11 @@ const routes: Routes = [
     component: ListaLivrosComponent
   },
 
-  { path: 'cadastro', component: CadastroComponent }, 
+  { path: 'cadastro', component: CadastroComponent },
 
   { path: 'login', component: LoginComponent },
+
+  { path: 'authorized', component: AuthorizadedComponent },
 
   { path: 'recuperacao-senha', component: RecuperacaoSenhaComponent },
 

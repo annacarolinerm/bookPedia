@@ -11,13 +11,16 @@ import { LivroComponent } from './componentes/livro/livro.component';
 import { ListaLivrosComponent } from './views/lista-livros/lista-livros.component';
 import { ModalLivroComponent } from './views/modal-livro/modal-livro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './pipes/autoria.pipe';
 import { PaginatorModule } from 'primeng/paginator';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RecuperacaoSenhaComponent } from './componentes/recuperacao-senha/recuperacao-senha.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { AuthorizadedComponent } from './componentes/authorizaded/authorizaded.component';
+import { AuthInterceptor } from './service/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     LoginComponent,
     RecuperacaoSenhaComponent,
     PerfilComponent,
+    AuthorizadedComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,13 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 
     PaginatorModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   exports: [TruncateDescriptionPipe]
 })
