@@ -5,6 +5,7 @@ import { Item, LivrosResultado } from 'src/app/models/interfaces';
 import { LivroVolumeInfo } from 'src/app/models/livroVolumeInfo';
 import { LivroService } from 'src/app/service/livro.service';
 import { ViewportScroller } from '@angular/common';
+import { HistoricoBuscaService } from 'src/app/service/historico-busca.service';
 
 const PAUSA = 300;
 
@@ -25,15 +26,23 @@ export class ListaLivrosComponent {
   resultadosPorPagina = 10;
   totalDeResultados = 0;
 
-  constructor(private service: LivroService, private viewportScroller: ViewportScroller) { }
+  constructor(private service: LivroService, 
+    private viewportScroller: ViewportScroller,
+    private historicoService: HistoricoBuscaService
+  ) { }
 
   livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
     debounceTime(PAUSA),
     tap(() => {
       this.paginaAtual = 0; // Reseta para a primeira página em cada nova busca
     }),
-    switchMap((valorDigitado) => 
-      this.buscarLivros(valorDigitado, this.paginaAtual * this.resultadosPorPagina)
+    switchMap((valorDigitado) => {
+      this.historicoService.registar(valorDigitado).subscribe({
+        next: () => console.log('deu certo')
+      })
+      return this.buscarLivros(valorDigitado, this.paginaAtual * this.resultadosPorPagina);
+  
+    }
     ),
     map((resultado) => {
       this.totalDeResultados = resultado.totalItems;
