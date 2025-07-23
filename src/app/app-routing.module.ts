@@ -6,6 +6,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RecuperacaoSenhaComponent } from './componentes/recuperacao-senha/recuperacao-senha.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { AuthorizadedComponent } from './componentes/authorizaded/authorizaded.component';
+import { AuthGuard } from './service/auth.guard';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'lista-livros',
-    component: ListaLivrosComponent
+    component: ListaLivrosComponent,
+    canActivate: [AuthGuard]
   },
 
   { path: 'cadastro', component: CadastroComponent },
@@ -27,7 +29,7 @@ const routes: Routes = [
 
   { path: 'recuperacao-senha', component: RecuperacaoSenhaComponent },
 
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
