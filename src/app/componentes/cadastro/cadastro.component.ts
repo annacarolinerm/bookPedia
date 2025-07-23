@@ -31,8 +31,6 @@ export class CadastroComponent {
       },
       error: () => console.log('teste')
     });
-
-    
   }
 
   cadastrar(email: string, senha: string, nome: string): Observable<any> {

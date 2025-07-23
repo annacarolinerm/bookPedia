@@ -11,7 +11,12 @@
     <button (click)="onModalChange(true)">Ler sinopse</button>
   </div>
 
-  <img src="assets/imagens/favoritar.png" alt="Favorito" class="icone-favoritar">
+  <button (click)="adicionarAoFavorito()">
+    <img 
+      src="assets/imagens/favoritar.png" 
+      alt="Favorito"
+      class="icone-favoritar" />
+  </button>
 </div>
 
 <app-modal-livro 
