@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';  // Importe o Router
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,7 +14,10 @@ export class CadastroComponent {
   confirmEmail: string = '';
   password: string = '';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
   // Método chamado quando o formulário de cadastro é enviado
   onSubmit(): void {
@@ -21,10 +26,23 @@ export class CadastroComponent {
       return;
     }
 
-    // Aqui você pode adicionar a lógica para salvar os dados de cadastro (API, etc.)
-    console.log('Cadastro realizado com sucesso', this.nome, this.email, this.password);
+    this.cadastrar(this.email, this.password, this.nome).subscribe({
+      next: () => {
+        this.router.navigate(['/login'])
+      },
+      error: () => console.log('teste')
+    });
 
     // Após o cadastro, redireciona para a página de login
-    this.router.navigate(['/login']);
+    
   }
+
+  cadastrar(email: string, senha: string, nome: string): Observable<any> {
+    return this.http.post('http://localhost:8080/usuario', {
+      email,
+      senha,
+      nome
+    });
+  }
+
 }
