@@ -10,26 +10,29 @@ const body = document.querySelector("body");
 })
 export class ModalLivroComponent {
 
+  @Input() livro: Livro;
+  @Input() statusModal: boolean; // Recebe o status do modal do componente pai
+  @Output() mudouModal = new EventEmitter<boolean>(); // Emite um valor booleano para o componente pai
+
   constructor() { }
 
-  @Input() livro: Livro;
-  statusModal: boolean = true;
-  @Output() mudouModal = new EventEmitter()
-
   fecharModal() {
-    this.statusModal = false
-    this.mudouModal.emit(this.statusModal)
-    body.style.overflow = "scroll"
+    this.statusModal = false;
+    this.mudouModal.emit(this.statusModal); // Emite o evento com o valor do statusModal
+    body.style.overflow = "scroll"; // Restaura o scroll do body ao fechar o modal
   }
 
-  esconderScroll(){
-    if(this.statusModal == true ) {
-      body.style.overflow = "hidden";
+  esconderScroll() {
+    if (this.statusModal) {
+      body.style.overflow = "hidden"; // Impede o scroll do body quando o modal está aberto
     }
   }
-  
+
   lerPrevia() {
-    window.open(this.livro.previewLink,'_blank');
+    window.open(this.livro.previewLink, '_blank');
   }
 
+  ngOnChanges() {
+    this.esconderScroll(); // Sempre que o statusModal mudar, ajusta o overflow
+  }
 }
