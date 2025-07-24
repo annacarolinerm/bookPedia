@@ -13,8 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const accessToken = localStorage.getItem('access_token');
 
-    console.log(req.method)
-    if (accessToken && req.url.includes('/usuario') && req.method != 'POST') {
+    if (accessToken && req.url.includes('/usuario') && !this.isCriandoUsuario(req)) {
       const authReq = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${accessToken}`)
       });
@@ -24,4 +23,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(req);
   }
+
+  private isCriandoUsuario(req: HttpRequest<any>): boolean {
+    return req.url.endsWith('/usuario') && req.method === 'POST';
+  }
+
 }
