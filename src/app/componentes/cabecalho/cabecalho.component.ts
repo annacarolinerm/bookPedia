@@ -10,6 +10,11 @@ export class CabecalhoComponent {
 
   constructor(private router: Router) {}
 
+  logout() {
+    localStorage.clear();
+    window.location.href = 'http://localhost:8080/logout';
+  }
+
   irParaTelaInicial() {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload'
